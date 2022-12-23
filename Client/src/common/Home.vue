@@ -1,8 +1,8 @@
 <template>
-    <button>click me</button>
+  <button>click me</button>
 </template>
 <script lang="ts">
 export default {
-    name: "Home"
-}
+  name: "Home",
+};
 </script>

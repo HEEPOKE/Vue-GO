@@ -1,13 +1,13 @@
 <template>
-    <NavBarVue />
+  <NavBarVue />
 </template>
 <script lang="ts">
-import NavBarVue from '../components/navbar/Index.vue'
+import NavBarVue from "../components/navbar/Index.vue";
 
 export default {
-    name: "NavbarMenu",
-    components: {
-        NavBarVue,
-    },
-}
+  name: "NavbarMenu",
+  components: {
+    NavBarVue,
+  },
+};
 </script>
