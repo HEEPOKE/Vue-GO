@@ -43,19 +43,21 @@
             </RouterLink>
           </li>
           <li class="nav-item p-2">
+            <RouterLink to="/product">
+              <a
+                class="nav-link text-white opacity-60 hover:opacity-80 focus:opacity-80 p-0"
+                href="#"
+                >Product</a
+              >
+            </RouterLink>
+          </li>
+          <li class="nav-item p-2">
             <RouterLink to="/about">
               <a
                 class="nav-link text-white opacity-60 hover:opacity-80 focus:opacity-80 p-0"
                 >About</a
               >
             </RouterLink>
-          </li>
-          <li class="nav-item p-2">
-            <a
-              class="nav-link text-white opacity-60 hover:opacity-80 focus:opacity-80 p-0"
-              href="#"
-              >Projects</a
-            >
           </li>
         </ul>
         <!-- Left links -->
