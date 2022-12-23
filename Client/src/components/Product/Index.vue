@@ -1,15 +1,15 @@
 <template>
-    <div>
-        <HeaderProduct />
-    </div>
+  <div>
+    <HeaderProduct />
+  </div>
 </template>
 <script lang="ts">
-import HeaderProduct from './Header.vue';
+import HeaderProduct from "./Header.vue";
 
 export default {
-    name: "ProductList",
-    components: {
-        HeaderProduct,
-    }
-}
+  name: "ProductList",
+  components: {
+    HeaderProduct,
+  },
+};
 </script>
