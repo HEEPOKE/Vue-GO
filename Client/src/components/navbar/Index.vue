@@ -101,6 +101,6 @@
 
 <script lang="ts">
 export default {
-    name: "NavBarCP"
+    name: "NavBarVue"
 }
 </script>

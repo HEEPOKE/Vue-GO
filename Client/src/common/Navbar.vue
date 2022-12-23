@@ -1,12 +1,15 @@
 <template>
-    <NavBarCP />
+    <NavBarVue />
     <button>aa</button>
 </template>
 
 <script lang="ts">
-import NavBarCP from '../components/navbar/Index.vue'
+import NavBarVue from '../components/navbar/Index.vue'
 
 export default {
-    name: "NavbarMenu"
+    name: "NavbarMenu",
+    components: {
+        NavBarVue,
+    },
 }
 </script>

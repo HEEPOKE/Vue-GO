@@ -1,10 +1,13 @@
 <template>
-  <HomePageVue />
+  <HomePage />
 </template>
 <script lang="ts">
-import HompageVue from './views/HomPage.vue';
+import HomePage from './views/HomPage.vue';
 
 export default {
   name: "App",
+  components: {
+    HomePage
+  }
 }
 </script>

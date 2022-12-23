@@ -6,6 +6,9 @@
 import NavbarMenu from '../common/Navbar.vue'
 
 export default {
-    name: "HomePage"
+    name: "HomePage",
+    components: {
+        NavbarMenu,
+    },
 }
 </script>
