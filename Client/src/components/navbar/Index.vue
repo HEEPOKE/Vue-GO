@@ -18,11 +18,16 @@
                 <!-- Left links -->
                 <ul class="navbar-nav flex flex-col pl-0 list-style-none mr-auto">
                     <li class="nav-item p-2">
-                        <a class="nav-link text-white" href="#">Dashboard</a>
+                        <RouterLink to="/">
+
+                            <a class="nav-link text-white">Dashboard</a>
+                        </RouterLink>
                     </li>
                     <li class="nav-item p-2">
-                        <a class="nav-link text-white opacity-60 hover:opacity-80 focus:opacity-80 p-0"
-                            href="#">Team</a>
+                        <RouterLink to="/about">
+
+                            <a class="nav-link text-white opacity-60 hover:opacity-80 focus:opacity-80 p-0">About</a>
+                        </RouterLink>
                     </li>
                     <li class="nav-item p-2">
                         <a class="nav-link text-white opacity-60 hover:opacity-80 focus:opacity-80 p-0"
