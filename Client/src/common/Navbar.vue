@@ -1,6 +1,5 @@
 <template>
     <NavBarVue />
-    <button>aa</button>
 </template>
 
 <script lang="ts">
