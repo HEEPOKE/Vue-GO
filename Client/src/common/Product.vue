@@ -1,18 +1,19 @@
 <template>
     <div>
         <NavbarMenu />
-        <Home />
+        <ProductList />
     </div>
 </template>
 <script lang="ts">
 import NavbarMenu from '../common/Navbar.vue'
-import Home from '../common/Home.vue'
+import ProductList from '../components/Product/Index.vue'
 
 export default {
-    name: "HomePage",
+    name: "ProductsListCommon",
     components: {
         NavbarMenu,
-        Home
-    },
+        ProductList
+    }
 }
+
 </script>
