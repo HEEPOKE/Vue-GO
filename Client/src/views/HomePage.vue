@@ -1,6 +1,10 @@
 <template>
-    <NavbarMenu />
-    <Home />
+    <div>
+        <NavbarMenu />
+        <div>
+            <Home />
+        </div>
+    </div>
 </template>
 
 <script lang="ts">

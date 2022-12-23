@@ -1,5 +1,5 @@
 <template>
-    <h1>Home</h1>
+    <button>click me</button>
 </template>
 <script lang="ts">
 export default {

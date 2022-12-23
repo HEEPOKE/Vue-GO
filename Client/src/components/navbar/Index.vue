@@ -103,7 +103,6 @@
         </div>
     </nav>
 </template>
-
 <script lang="ts">
 export default {
     name: "NavBarVue"
