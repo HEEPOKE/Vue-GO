@@ -34,8 +34,9 @@
         class="collapse navbar-collapse flex-grow items-center"
         id="navbarSupportedContent1"
       >
-        <a class="text-xl text-white pr-2 font-semibold" href="#">Navbar</a>
-        <!-- Left links -->
+        <Router-link to="/">
+          <a class="text-xl text-white pr-2 font-semibold">Topic</a>
+        </Router-link>
         <ul class="navbar-nav flex flex-col pl-0 list-style-none mr-auto">
           <li class="nav-item p-2">
             <RouterLink to="/">
@@ -46,7 +47,6 @@
             <RouterLink to="/product">
               <a
                 class="nav-link text-white opacity-60 hover:opacity-80 focus:opacity-80 p-0"
-                href="#"
                 >Product</a
               >
             </RouterLink>
@@ -60,13 +60,8 @@
             </RouterLink>
           </li>
         </ul>
-        <!-- Left links -->
       </div>
-      <!-- Collapsible wrapper -->
-
-      <!-- Right elements -->
       <div class="flex items-center relative">
-        <!-- Icon -->
         <a
           class="text-white opacity-60 hover:opacity-80 focus:opacity-80 mr-4"
           href="#"
