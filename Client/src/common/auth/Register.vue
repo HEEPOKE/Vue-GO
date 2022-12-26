@@ -7,6 +7,7 @@
                         class="w-full" alt="Phone image" />
                 </div>
                 <div class="md:w-8/12 lg:w-5/12 lg:ml-20">
+                    <HeaderRegister />
                     <form>
                         <div class="mb-6">
                             <input type="text"
@@ -64,7 +65,12 @@
     </section>
 </template>
 <script lang="ts">
+import HeaderRegister from '../../components/auth/register/HeaderRegister.vue';
+
 export default {
-    name: "Register"
+    name: "Register",
+    components: {
+        HeaderRegister
+    }
 }
 </script>

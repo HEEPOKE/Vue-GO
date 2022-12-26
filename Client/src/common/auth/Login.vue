@@ -7,6 +7,7 @@
                         class="w-full" alt="Phone image" />
                 </div>
                 <div class="md:w-8/12 lg:w-5/12 lg:ml-20">
+                    <HeaderLogin />
                     <form>
                         <div class="mb-6">
                             <input type="text"
@@ -63,9 +64,13 @@
         </div>
     </section>
 </template>
-
 <script lang="ts">
+import HeaderLogin from '../../components/auth/login/HeaderLogin.vue';
+
 export default {
-    name: "Login"
+    name: "Login",
+    components: {
+        HeaderLogin
+    }
 }
 </script>
