@@ -1,22 +1,25 @@
 <template>
     <div class="flex flex-col">
         <div class="overflow-x-auto sm:-mx-6 lg:-mx-8">
-            <div class="py-2 inline-block min-w-full sm:px-6 lg:px-8">
+            <div class="py-2 inline-block max-w-full sm:px-6 lg:px-8">
                 <div class="overflow-hidden">
-                    <table class="min-w-full border text-center">
+                    <table class="border text-center max-w-full">
                         <thead class="border-b bg-gray-800">
                             <tr>
                                 <th scope="col" class="text-sm font-medium text-white px-6 py-4 border-r">
                                     #
                                 </th>
                                 <th scope="col" class="text-sm font-medium text-white px-6 py-4 border-r">
-                                    First
+                                    name
                                 </th>
                                 <th scope="col" class="text-sm font-medium text-white px-6 py-4 border-r">
-                                    Last
+                                    description
+                                </th>
+                                <th scope="col" class="text-sm font-medium text-white px-6 py-4 border-r">
+                                    price
                                 </th>
                                 <th scope="col" class="text-sm font-medium text-white px-6 py-4">
-                                    Handle
+                                    manage
                                 </th>
                             </tr>
                         </thead>
@@ -30,8 +33,20 @@
                                 <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap border-r">
                                     Otto
                                 </td>
-                                <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                                <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap border-r">
                                     @mdo
+                                </td>
+                                <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                                    <div class="flex space-x-2 justify-center">
+                                        <div>
+                                            <button type="button"
+                                                class="inline-block mx-1 px-6 py-2.5 bg-blue-600 text-white ont-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out">Primary</button>
+                                            <button type="button"
+                                                class="inline-block mx-1 px-6 py-2.5 bg-yellow-500 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-yellow-600 hover:shadow-lg focus:bg-yellow-600 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-yellow-700 active:shadow-lg transition duration-150 ease-in-out">Warning</button>
+                                            <button type="button"
+                                                class="inline-block mx-1 px-6 py-2.5 bg-red-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-red-700 hover:shadow-lg focus:bg-red-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-red-800 active:shadow-lg transition duration-150 ease-in-out">Danger</button>
+                                        </div>
+                                    </div>
                                 </td>
                             </tr>
                         </tbody>
