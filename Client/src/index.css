@@ -3,6 +3,10 @@
 @tailwind utilities;
 
 body {
-    padding: 0;
-    margin: 0;
-  }
+  padding: 0;
+  margin: 0;
+}
+
+.translateChange {
+  transform: translateX(24px) !important;
+}
