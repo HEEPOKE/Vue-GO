@@ -34,21 +34,21 @@
             </RouterLink>
           </li>
         </ul>
-      </div>
-      <div class="flex items-center relative">
-        <ul class="navbar-nav flex flex-col pl-0 list-style-none mr-auto">
-          <li class="nav-item p-2">
-            <RouterLink to="/auth/login" class="nav-link text-white opacity-60 hover:opacity-80 focus:opacity-80 p-0">
-              Login
-            </RouterLink>
-          </li>
-          <li class="nav-item p-2">
-            <RouterLink to="/auth/register"
-              class="nav-link text-white opacity-60 hover:opacity-80 focus:opacity-80 p-0">
-              Register
-            </RouterLink>
-          </li>
-        </ul>
+        <div class="flex items-center relative">
+          <ul class="navbar-nav flex flex-col pl-0 list-style-none mr-auto">
+            <li class="nav-item p-2">
+              <RouterLink to="/auth/login" class="nav-link text-white opacity-60 hover:opacity-80 focus:opacity-80 p-0">
+                Login
+              </RouterLink>
+            </li>
+            <li class="nav-item p-2">
+              <RouterLink to="/auth/register"
+                class="nav-link text-white opacity-60 hover:opacity-80 focus:opacity-80 p-0">
+                Register
+              </RouterLink>
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
   </nav>
