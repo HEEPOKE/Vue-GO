@@ -14,23 +14,23 @@
         </svg>
       </button>
       <div class="collapse navbar-collapse flex-grow items-center" id="navbarSupportedContent1">
-        <Router-link to="/">
-          <a class="text-xl text-white pr-2 font-semibold">Topic</a>
+        <Router-link to="/" class="text-xl text-white pr-2 font-semibold">
+          Topic
         </Router-link>
         <ul class="navbar-nav flex flex-col pl-0 list-style-none mr-auto">
           <li class="nav-item p-2">
-            <RouterLink to="/">
-              <a class="nav-link text-white opacity-60 hover:opacity-80 focus:opacity-80 p-0">Dashboard</a>
+            <RouterLink to="/" class="nav-link text-white opacity-60 hover:opacity-80 focus:opacity-80 p-0">
+              Dashboard
             </RouterLink>
           </li>
           <li class="nav-item p-2">
-            <RouterLink to="/product">
-              <a class="nav-link text-white opacity-60 hover:opacity-80 focus:opacity-80 p-0">Product</a>
+            <RouterLink to="/product" class="nav-link text-white opacity-60 hover:opacity-80 focus:opacity-80 p-0">
+              Product
             </RouterLink>
           </li>
           <li class="nav-item p-2">
-            <RouterLink to="/about">
-              <a class="nav-link text-white opacity-60 hover:opacity-80 focus:opacity-80 p-0">About</a>
+            <RouterLink to="/about" class="nav-link text-white opacity-60 hover:opacity-80 focus:opacity-80 p-0">
+              About
             </RouterLink>
           </li>
         </ul>
@@ -38,13 +38,14 @@
       <div class="flex items-center relative">
         <ul class="navbar-nav flex flex-col pl-0 list-style-none mr-auto">
           <li class="nav-item p-2">
-            <RouterLink to="/auth/login">
-              <a class="nav-link text-white opacity-60 hover:opacity-80 focus:opacity-80 p-0">Login</a>
+            <RouterLink to="/auth/login" class="nav-link text-white opacity-60 hover:opacity-80 focus:opacity-80 p-0">
+              Login
             </RouterLink>
           </li>
           <li class="nav-item p-2">
-            <RouterLink to="/auth/register">
-              <a class="nav-link text-white opacity-60 hover:opacity-80 focus:opacity-80 p-0">Register</a>
+            <RouterLink to="/auth/register"
+              class="nav-link text-white opacity-60 hover:opacity-80 focus:opacity-80 p-0">
+              Register
             </RouterLink>
           </li>
         </ul>
