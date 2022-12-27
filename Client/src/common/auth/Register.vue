@@ -13,7 +13,7 @@
                             <label class="form-label inline-block text-lg mb-2 text-gray-700">Username</label>
                             <input type="text"
                                 class="form-control block w-full px-4 py-2 text-xl font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
-                                placeholder="Username" required />
+                                v-model="register.username" placeholder="Username" required />
                         </div>
                         <div class="mb-3">
                             <label class="form-label inline-block text-lg mb-2 text-gray-700">Email</label>
@@ -25,19 +25,19 @@
                             <label class="form-label inline-block text-lg mb-2 text-gray-700">Password</label>
                             <input type="password"
                                 class="form-control block w-full px-4 py-2 text-xl font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
-                                placeholder="Password" required />
+                                placeholder="Password" minlength="8" maxlength="20" required />
                         </div>
                         <div class="mb-3">
                             <label class="form-label inline-block text-lg mb-2 text-gray-700">Confirm Password</label>
                             <input type="password"
                                 class="form-control block w-full px-4 py-2 text-xl font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
-                                placeholder="Confirm Password" required />
+                                placeholder="Confirm Password" minlength="8" maxlength="20" required />
                         </div>
                         <div class="mb-3">
                             <label class="form-label inline-block text-lg mb-2 text-gray-700">Telephone</label>
                             <input type="tel"
                                 class="form-control block w-full px-4 py-2 text-xl font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
-                                placeholder="xxx-xxx-xxxx" required />
+                                minlength="10" maxlength="10" placeholder="xxx-xxx-xxxx" required />
                         </div>
                         <button type="submit"
                             class="inline-block px-7 py-3 mb-3 bg-blue-600 text-white font-medium text-sm rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out w-full">
@@ -69,12 +69,30 @@
 <script lang="ts">
 import { defineComponent } from "vue";
 import HeaderRegister from '../../components/auth/register/HeaderRegister.vue';
+import RegisterModel from '../../models/auth/register';
 
 export default defineComponent({
     name: "Register",
+    data() {
+        return {
+            register: {
+                username: "",
+                email: "",
+                password: "",
+                confirmPassword: "",
+                tel: "",
+            } as RegisterModel,
+        }
+    },
     components: {
         HeaderRegister
     }, methods: {
+        handlerSubmit() {
+            const { username } = this.register;
+
+            console.log(this.register);
+
+        },
         goBack() {
             this.$router.go(-1)
         },
