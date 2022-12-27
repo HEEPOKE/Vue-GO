@@ -37,7 +37,7 @@
         <div class="flex items-center relative">
           <ul class="navbar-nav flex flex-col pl-0 list-style-none mr-auto">
             <li class="nav-item p-2">
-              <RouterLink to="/auth/login" class="nav-link text-white opacity-60 hover:opacity-80 focus:opacity-80 p-0">
+              <RouterLink to="/auth/login" class="nav-link text-white opacity-60 hover:opacity-80 focus:opacity-80 p-0 dark:bg-black">
                 Login
               </RouterLink>
             </li>
@@ -48,13 +48,19 @@
               </RouterLink>
             </li>
           </ul>
+          <ChangeModeButton />
         </div>
       </div>
     </div>
   </nav>
 </template>
 <script lang="ts">
+import ChangeModeButton from './ChangeMode.vue';
+
 export default {
   name: "NavBarVue",
+  components: {
+    ChangeModeButton,
+  }
 };
 </script>
