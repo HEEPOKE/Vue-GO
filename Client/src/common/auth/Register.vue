@@ -8,7 +8,7 @@
                 </div>
                 <div class="md:w-8/12 lg:w-5/12 lg:ml-20">
                     <HeaderRegister />
-                    <form>
+                    <form v-on:submit.prevent @submit="handlerSubmit()">
                         <div class="mb-3">
                             <label class="form-label inline-block text-lg mb-2 text-gray-700">Username</label>
                             <input type="text"
@@ -19,25 +19,28 @@
                             <label class="form-label inline-block text-lg mb-2 text-gray-700">Email</label>
                             <input type="email"
                                 class="form-control block w-full px-4 py-2 text-xl font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
-                                placeholder="Email" required />
+                                v-model="register.email" placeholder="Email" required />
                         </div>
                         <div class="mb-3">
                             <label class="form-label inline-block text-lg mb-2 text-gray-700">Password</label>
                             <input type="password"
                                 class="form-control block w-full px-4 py-2 text-xl font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
-                                placeholder="Password" minlength="8" maxlength="20" required />
+                                v-model="register.password" placeholder="Password" minlength="8" maxlength="20"
+                                required />
                         </div>
                         <div class="mb-3">
                             <label class="form-label inline-block text-lg mb-2 text-gray-700">Confirm Password</label>
                             <input type="password"
                                 class="form-control block w-full px-4 py-2 text-xl font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
-                                placeholder="Confirm Password" minlength="8" maxlength="20" required />
+                                minlength="8" maxlength="20" v-model="register.confirmPassword"
+                                placeholder="Confirm Password" required />
                         </div>
                         <div class="mb-3">
                             <label class="form-label inline-block text-lg mb-2 text-gray-700">Telephone</label>
                             <input type="tel"
                                 class="form-control block w-full px-4 py-2 text-xl font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
-                                minlength="10" maxlength="10" placeholder="xxx-xxx-xxxx" required />
+                                minlength="10" maxlength="10" v-model="register.tel" placeholder="xxx-xxx-xxxx"
+                                required />
                         </div>
                         <button type="submit"
                             class="inline-block px-7 py-3 mb-3 bg-blue-600 text-white font-medium text-sm rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out w-full">
@@ -88,10 +91,16 @@ export default defineComponent({
         HeaderRegister
     }, methods: {
         handlerSubmit() {
-            const { username } = this.register;
+            const password = this.register.password;
+            const confirmPassword = this.register.confirmPassword;
 
-            console.log(this.register);
-
+            if (password != confirmPassword) {
+                console.log("false");
+            } else {
+                console.log(password);
+                console.log(confirmPassword);
+                console.log(this.register.username);
+            }
         },
         goBack() {
             this.$router.go(-1)
