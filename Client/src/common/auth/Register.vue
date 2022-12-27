@@ -74,6 +74,7 @@ import { defineComponent } from "vue";
 import HeaderRegister from '../../components/auth/register/HeaderRegister.vue';
 import RegisterModel from '../../models/auth/register';
 import AuthService from '../../services/AuthService';
+import swalAuth from "../../assets/ts/auth";
 
 export default defineComponent({
     name: "Register",
@@ -103,7 +104,7 @@ export default defineComponent({
             }
 
             if (password != confirmPassword) {
-                console.log("false");
+                swalAuth.checkPassword()
             } else {
                 AuthService.RegisterService(data)
             }

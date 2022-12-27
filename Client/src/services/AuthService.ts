@@ -9,7 +9,6 @@ const RegisterService = (data: any) => {
     .catch((err: any) => {
       console.log(err);
     });
-  // console.log(data);
 };
 
 const AuthService = { RegisterService };
