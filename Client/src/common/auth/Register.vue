@@ -73,6 +73,7 @@
 import { defineComponent } from "vue";
 import HeaderRegister from '../../components/auth/register/HeaderRegister.vue';
 import RegisterModel from '../../models/auth/register';
+import AuthService from '../../services/AuthService';
 
 export default defineComponent({
     name: "Register",
@@ -94,12 +95,17 @@ export default defineComponent({
             const password = this.register.password;
             const confirmPassword = this.register.confirmPassword;
 
+            let data = {
+                username: this.register.username,
+                email: this.register.email,
+                password: password,
+                tel: this.register.tel,
+            }
+
             if (password != confirmPassword) {
                 console.log("false");
             } else {
-                console.log(password);
-                console.log(confirmPassword);
-                console.log(this.register.username);
+                AuthService.RegisterService(data)
             }
         },
         goBack() {
