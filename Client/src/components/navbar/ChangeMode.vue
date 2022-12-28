@@ -1,11 +1,11 @@
 <template>
     <div class="hidden w-full md:flex md:items-center md:w-auto" @click="toggleDarkMode">
         <input type="checkbox" class="checkbox absolute opacity-0" id="checkboxChange" />
-        <label class="checkbox-label w-18">
+        <label class="checkbox-label flex relative p-1.5 items-center justify-between bg-black rounded-full cursor-pointer">
             <div class="toggle-slot">
-                <font-awesome-icon icon="fa-solid fa-moon" class="moon-icon w-6 h-4" />
-                <font-awesome-icon icon="fa-solid fa-sun" class="sun-icon w-6 h-4" />
-                <div class="ball bg-gray-900 left-2px w-28px h-28px rounded-1/2 transition-transform !ease-linear" id="ball"></div>
+                <font-awesome-icon icon="fa-solid fa-moon" class="text-amber-300 w-6 h-4" />
+                <font-awesome-icon icon="fa-solid fa-sun" class="text-yellow-400 w-6 h-4" />
+                <div class="ball bg-white absolute left-2 top-1 w-6 h-6 rounded-full transition-transform !ease-linear" id="ball"></div>
             </div>
         </label>
     </div>
