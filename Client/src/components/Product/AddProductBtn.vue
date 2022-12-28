@@ -36,7 +36,7 @@
         ease-in-out
         m-0
         focus:text-gray-700 focus:border-rose-600 focus:outline-none
-      " placeholder="Name" />
+      " v-model="product.name" placeholder="Name" />
                     </div>
                     <div class="mb-3 xl:w-full">
                         <label class="form-label inline-block mb-2 text-gray-700">
@@ -57,7 +57,7 @@
         ease-in-out
         m-0
         focus:text-gray-700 focus:border-rose-600 focus:outline-none
-      " rows="3" placeholder="Description"></textarea>
+      " rows="3" v-model="product.description" placeholder="Description"></textarea>
                     </div>
                     <div class="mb-3 xl:w-full">
                         <label class="form-label inline-block mb-2 text-gray-700">
@@ -78,7 +78,7 @@
         ease-in-out
         m-0
         focus:text-gray-700 focus:border-rose-600 focus:outline-none
-      " min="0" placeholder="บาท" />
+      " min="0" v-model="product.price" placeholder="บาท" />
                     </div>
                 </div>
                 <div
@@ -98,7 +98,7 @@
       active:bg-rose-800 active:shadow-lg
       transition
       duration-150
-      ease-in-out">บันทึก</button>
+      ease-in-out" @click="handlerSubmit">บันทึก</button>
                     <button type="button" class="px-6
           py-2.5
           ml-1
@@ -122,8 +122,32 @@
     </div>
 </template>
 <script lang="ts">
+import { defineComponent } from "vue";
+import ProductModel from '../../models/product';
 
-export default {
+
+export default defineComponent({
     name: "AddProductBtn",
-}
+    data() {
+        return {
+            product: {
+                name: "",
+                description: "",
+                price: 0
+            } as ProductModel,
+        }
+    },
+    methods: {
+        handlerSubmit() {
+            let data = {
+                name: this.product.name,
+                description: this.product.description,
+                price: this.product.price
+            }
+
+            console.log(data);
+
+        }
+    }
+})
 </script>
