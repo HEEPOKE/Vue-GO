@@ -1,6 +1,7 @@
 package database
 
 import (
+	"Server/Api/models"
 	"os"
 
 	"gorm.io/driver/mysql"
@@ -17,6 +18,6 @@ func ConnectDB() {
 		panic("failed to connect database")
 	}
 
-	// DB.AutoMigrate(&model.User{})
-	// DB.AutoMigrate(&model.Product{})
+	DB.AutoMigrate(&models.User{})
+	DB.AutoMigrate(&models.Product{})
 }
