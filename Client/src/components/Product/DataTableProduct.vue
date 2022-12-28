@@ -4,7 +4,7 @@
             <div class="py-2 inline-block max-w-full sm:px-6 lg:px-8">
                 <div class="overflow-hidden">
                     <table class="border text-center max-w-full">
-                        <thead class="border-b bg-gray-800">
+                        <thead class="border-b bg-rose-600 dark:bg-black">
                             <tr>
                                 <th scope="col" class="text-sm font-medium text-white px-6 py-4 border-r">
                                     #
