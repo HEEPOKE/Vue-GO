@@ -8,25 +8,28 @@
                 </div>
                 <div class="md:w-8/12 lg:w-5/12 lg:ml-20">
                     <HeaderLogin />
-                    <form>
+                    <form v-on:submit.prevent @submit="handlerSubmit()">
                         <div class="mb-6">
-                            <label class="form-label inline-block text-lg mb-2 text-gray-700 dark:text-white">Email</label>
+                            <label
+                                class="form-label inline-block text-lg mb-2 text-gray-700 dark:text-white">Email</label>
                             <input type="text"
-                                class="form-control block w-full px-4 py-2 text-xl font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none dark:text-white"
-                                placeholder="Email" required />
+                                class="form-control block w-full px-4 py-2 text-xl font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none dark:text-black"
+                                v-model="login.email" placeholder="Email" required />
                         </div>
                         <div class="mb-6">
-                            <label class="form-label inline-block text-lg mb-2 text-gray-700 dark:text-white">Password</label>
+                            <label
+                                class="form-label inline-block text-lg mb-2 text-gray-700 dark:text-white">Password</label>
                             <input type="password"
-                                class="form-control block w-full px-4 py-2 text-xl font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none dark:text-white"
-                                placeholder="Password" required />
+                                class="form-control block w-full px-4 py-2 text-xl font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none dark:text-black"
+                             minlength="8" maxlength="20"  v-model="login.password" placeholder="Password" required />
                         </div>
                         <div class="flex justify-between items-center mb-6">
                             <div class="form-group form-check">
                                 <input type="checkbox"
                                     class="form-check-input appearance-none h-4 w-4 border border-gray-300 rounded-sm bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer dark:text-white"
                                     id="exampleCheck3" checked />
-                                <label class="form-check-label inline-block text-gray-800 dark:text-white" for="exampleCheck2">Remember
+                                <label class="form-check-label inline-block text-gray-800 dark:text-white"
+                                    for="exampleCheck2">Remember
                                     me</label>
                             </div>
                             <RouterLink to="/auth/forgotPassword">
@@ -70,13 +73,30 @@
 <script lang="ts">
 import { defineComponent } from "vue";
 import HeaderLogin from "../../components/auth/login/HeaderLogin.vue";
+import LoginModel from "../../models/auth/login";
+import AuthService from "../../services/AuthService";
 
 export default defineComponent({
     name: "Login",
     components: {
         HeaderLogin,
     },
+    data() {
+        return {
+            login: {
+                email: "",
+                password: ""
+            } as LoginModel
+        }
+    },
     methods: {
+        handlerSubmit() {
+            let data = {
+                email: this.login.email,
+                password: this.login.password
+            }
+            AuthService.LoginService(data)
+        },
         goBack() {
             this.$router.go(-1);
         },
