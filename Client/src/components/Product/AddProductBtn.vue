@@ -16,12 +16,13 @@
                         class="btn-close box-content w-4 h-4 p-1 text-black border-none rounded-none opacity-50 focus:shadow-none focus:outline-none focus:opacity-100 hover:text-black hover:opacity-75 hover:no-underline"
                         data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <div class="modal-body relative p-4 w-full">
-                    <div class="mb-3 xl:w-full">
-                        <label class="form-label inline-block mb-2 text-gray-700">
-                            Name
-                        </label>
-                        <input type="text" class="
+                <form v-on:submit.prevent @submit="handlerSubmit()">
+                    <div class="modal-body relative p-4 w-full">
+                        <div class="mb-3 xl:w-full">
+                            <label class="form-label inline-block mb-2 text-gray-700">
+                                Name
+                            </label>
+                            <input type="text" class="
         block
         w-full
         px-3
@@ -36,13 +37,13 @@
         ease-in-out
         m-0
         focus:text-gray-700 focus:border-rose-600 focus:outline-none
-      " v-model="product.name" placeholder="Name" />
-                    </div>
-                    <div class="mb-3 xl:w-full">
-                        <label class="form-label inline-block mb-2 text-gray-700">
-                            Description
-                        </label>
-                        <textarea class="
+      " v-model="product.name" placeholder="Name" required />
+                        </div>
+                        <div class="mb-3 xl:w-full">
+                            <label class="form-label inline-block mb-2 text-gray-700">
+                                Description
+                            </label>
+                            <textarea class="
         block
         w-full
         px-3
@@ -57,13 +58,13 @@
         ease-in-out
         m-0
         focus:text-gray-700 focus:border-rose-600 focus:outline-none
-      " rows="3" v-model="product.description" placeholder="Description"></textarea>
-                    </div>
-                    <div class="mb-3 xl:w-full">
-                        <label class="form-label inline-block mb-2 text-gray-700">
-                            Price
-                        </label>
-                        <input type="number" class="
+      " rows="3" v-model="product.description" placeholder="Description" required></textarea>
+                        </div>
+                        <div class="mb-3 xl:w-full">
+                            <label class="form-label inline-block mb-2 text-gray-700">
+                                Price
+                            </label>
+                            <input type="number" class="
         block
         w-full
         px-3
@@ -79,11 +80,11 @@
         m-0
         focus:text-gray-700 focus:border-rose-600 focus:outline-none
       " min="0" v-model="product.price" placeholder="บาท" />
+                        </div>
                     </div>
-                </div>
-                <div
-                    class="modal-footer flex flex-shrink-0 flex-wrap items-center justify-end p-4 border-t border-gray-200 rounded-b-md">
-                    <button type="button" class="px-6
+                    <div
+                        class="modal-footer flex flex-shrink-0 flex-wrap items-center justify-end p-4 border-t border-gray-200 rounded-b-md">
+                        <button type="submit" class="px-6
       py-2.5
       bg-rose-600
       text-white
@@ -98,8 +99,8 @@
       active:bg-rose-800 active:shadow-lg
       transition
       duration-150
-      ease-in-out" @click="handlerSubmit">บันทึก</button>
-                    <button type="button" class="px-6
+      ease-in-out">บันทึก</button>
+                        <button type="button" class="px-6
           py-2.5
           ml-1
           bg-purple-600
@@ -116,7 +117,8 @@
           transition
           duration-150
           ease-in-out" data-bs-dismiss="modal">ยกเลิก</button>
-                </div>
+                    </div>
+                </form>
             </div>
         </div>
     </div>
