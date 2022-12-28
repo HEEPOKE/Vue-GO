@@ -3,6 +3,7 @@
         "datatables",
         "fontawesome",
         "fortawesome",
+        "gofiber",
         "Swal",
         "sweetalert",
         "tailwindcss",
