@@ -124,7 +124,7 @@
 <script lang="ts">
 import { defineComponent } from "vue";
 import ProductModel from '../../models/product';
-
+import ProductServices from '../../services/ProductService';
 
 export default defineComponent({
     name: "AddProductBtn",
@@ -144,9 +144,7 @@ export default defineComponent({
                 description: this.product.description,
                 price: this.product.price
             }
-
-            console.log(data);
-
+            ProductServices.AddProduct(data)
         }
     }
 })
