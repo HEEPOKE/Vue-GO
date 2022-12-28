@@ -1,5 +1,6 @@
 import Http from "../http/http";
 import ProductModel from "../models/product";
+import UpdateProductModel from "../models/updateProductModel";
 
 const AddProduct = (data: any) => {
   return Http.post<ProductModel>("/api/product/add", data)
@@ -11,6 +12,16 @@ const AddProduct = (data: any) => {
     });
 };
 
-const ProductServices = { AddProduct };
+const UpdateProduct = ({ id, data }: UpdateProductModel) => {
+  return Http.put<ProductModel>(`/api/product/update${id}`, data)
+    .then((res: any) => {
+      console.log(res);
+    })
+    .catch((err: any) => {
+      console.log(err);
+    });
+};
+
+const ProductServices = { AddProduct, UpdateProduct };
 
 export default ProductServices;
