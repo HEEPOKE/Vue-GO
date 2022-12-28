@@ -24,7 +24,9 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr class="bg-white border-b transition duration-300 ease-in-out hover:bg-gray-100">
+                            <tr class="bg-white border-b transition duration-300 ease-in-out hover:bg-gray-100"
+                                v-for="Product in product" :key="product.id"
+                                >
                                 <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900 border-r">1
                                 </td>
                                 <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap border-r">
@@ -47,8 +49,7 @@
                                                 class="w-4 h-3" /></button>
                                         <button type="button"
                                             class="inline-block mx-1 px-4 text-center py-2.5 bg-red-600 text-white font-medium text-xs leading-tight rounded shadow-md hover:bg-red-700 hover:shadow-lg focus:bg-red-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-red-800 active:shadow-lg transition duration-150 ease-in-out">
-                                            <font-awesome-icon icon="fa-solid fa-trash-can"
-                                                class="w-4 h-3" /></button>
+                                            <font-awesome-icon icon="fa-solid fa-trash-can" class="w-4 h-3" /></button>
                                     </div>
                                 </td>
                             </tr>
@@ -63,6 +64,14 @@
 
 export default {
     name: "DataTableProduct",
-
+    data() {
+        return {
+            product: []
+        }
+    }, methods: {
+        deleteProduct() {
+            // let id = this.product.findIndex(i => i.id === id)
+        }
+    }
 }
 </script>

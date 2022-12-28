@@ -4,6 +4,7 @@ const RegisterPage = () => import("../views/auth/RegisterPage.vue");
 const ForgotPasswordPage = () => import("../views/auth/ForgotPasswordPage.vue");
 const HomePage = () => import("../views/HomePage.vue");
 const ProductsListPage = () => import("../views/ProductsListPage.vue");
+const UpdateProductPage = () => import("../views/UpdateProductPage.vue");
 const AboutPage = () => import("../views/AboutPage.vue");
 const NotFoundPage = () => import("../views/NotFoundPage.vue");
 
@@ -17,6 +18,11 @@ const routes = [
   },
   { path: "/", name: "HomePage", component: HomePage },
   { path: "/product", name: "ProductsListPage", component: ProductsListPage },
+  {
+    path: "/product/:id",
+    name: "UpdateProductPage",
+    component: UpdateProductPage,
+  },
   { path: "/about", name: "AboutPage", component: AboutPage },
   { path: "/*", name: "NotFoundPage", component: NotFoundPage },
 ];
