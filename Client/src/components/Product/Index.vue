@@ -6,7 +6,8 @@
         <div class="py-3 px-6 border-b border-gray-300">
           Product List
         </div>
-        <div class="p-6">
+        <CreateProductBtn />
+        <div class="p-6 mt-8">
           <DataTableProduct />
         </div>
       </div>
@@ -16,12 +17,14 @@
 <script lang="ts">
 import HeaderProduct from "./Header.vue";
 import DataTableProduct from "./DataTableProduct.vue";
+import CreateProductBtn from "./CreateProductBtn.vue";
 
 export default {
   name: "ProductList",
   components: {
     HeaderProduct,
-    DataTableProduct
+    DataTableProduct,
+    CreateProductBtn
   },
 };
 </script>

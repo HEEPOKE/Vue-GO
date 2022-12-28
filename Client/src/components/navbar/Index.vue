@@ -1,6 +1,6 @@
 <template>
   <nav
-    class="relative w-full flex flex-wrap items-center justify-between py-3 bg-rose-600 text-white shadow-lg navbar navbar-expand-lg navbar-light dark:bg-black dark:text-gray-700 dark:border dark:border-white dark:border-b-white">
+    class="relative w-full flex flex-wrap items-center justify-between py-3 bg-rose-600 text-white shadow-lg navbar navbar-expand-lg navbar-light dark:bg-black dark:text-gray-700 dark:border-b dark:border-b-white">
     <div class="container-fluid w-full flex flex-wrap items-center justify-between px-6">
       <button
         class="navbar-toggler text-gray-200 border-0 hover:shadow-none hover:no-underline py-2 px-2.5 bg-transparent focus:outline-none focus:ring-0 focus:shadow-none focus:no-underline"
