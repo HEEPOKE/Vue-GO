@@ -1,12 +1,14 @@
 {
     "cSpell.words": [
         "datatables",
+        "dbname",
         "fontawesome",
         "fortawesome",
         "godotenv",
         "gofiber",
         "gorm",
         "joho",
+        "sslmode",
         "Swal",
         "sweetalert",
         "tailwindcss",
