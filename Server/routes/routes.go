@@ -1,6 +1,10 @@
 package routes
 
-import "github.com/gofiber/fiber/v2"
+import (
+	productController "Server/Api/controllers/product"
+
+	"github.com/gofiber/fiber/v2"
+)
 
 func Router() {
 	r := fiber.New()
@@ -8,5 +12,6 @@ func Router() {
 		return c.SendString("root")
 	})
 
+	r.Get("/product", productController.ReadProduct)
 	r.Listen(":6476")
 }
