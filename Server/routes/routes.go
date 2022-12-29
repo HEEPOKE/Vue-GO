@@ -10,7 +10,7 @@ func Router() {
 	r := fiber.New()
 
 	r.Get("/product", productController.ReadProduct)
-	r.Get("/product/add", productController.AddProduct)
+	r.Post("/product/add", productController.AddProduct)
 
 	r.Listen(":6476")
 }
