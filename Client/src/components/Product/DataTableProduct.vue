@@ -10,6 +10,12 @@
                   scope="col"
                   class="text-sm font-medium text-white px-6 py-4 border-r"
                 >
+                  code
+                </th>
+                <th
+                  scope="col"
+                  class="text-sm font-medium text-white px-6 py-4 border-r"
+                >
                   name
                 </th>
                 <th
@@ -38,6 +44,11 @@
                 v-for="product in products"
                 :key="product.ID"
               >
+                <td
+                  class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap border-r"
+                >
+                  {{ product.code }}
+                </td>
                 <td
                   class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap border-r"
                 >
