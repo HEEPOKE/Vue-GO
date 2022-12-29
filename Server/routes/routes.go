@@ -8,10 +8,9 @@ import (
 
 func Router() {
 	r := fiber.New()
-	r.Get("/", func(c *fiber.Ctx) error {
-		return c.SendString("root")
-	})
 
 	r.Get("/product", productController.ReadProduct)
+	r.Get("/product/add", productController.AddProduct)
+
 	r.Listen(":6476")
 }
