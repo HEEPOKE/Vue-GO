@@ -33,15 +33,56 @@
     </div>
 </template>
 <script lang="ts">
+import { useRoute } from 'vue-router'
+import Http from '../../http/http';
+import ProductServices from '../../services/ProductService';
+import ProductModel from '../../models/product';
+import UpdateProductModel from '../../models/updateProductModel';
+
+const route = useRoute()
+
 export default {
     name: "FormUpdateProduct",
+    data() {
+        return {
+            products: [] as ProductModel[],
+        }
+    },
     methods: {
+        getProduct() {
+            const getId = this.$route.params.id;
+
+            if (typeof getId === 'string') {
+                const id = parseInt(getId);
+
+                ProductServices.GetProductById(id)
+                    .then((res: any) => {
+                        console.log(res.data.payload);
+                    })
+                    .catch((err: any) => {
+                        console.log(err);
+                    });
+            } else {
+                this.goBack()
+            }
+        },
+        updateProduct({ id, data }: UpdateProductModel) {
+            Http.put<ProductModel>(`/api/product/update${id}`, data)
+                .then((res: any) => {
+                    console.log(res);
+                })
+                .catch((err: any) => {
+                    console.log(err);
+                });
+        },
         handlerSubmit() {
 
         },
         goBack() {
             this.$router.go(-1);
         },
+    }, mounted() {
+        this.getProduct()
     }
 };
 </script>

@@ -6,6 +6,10 @@ const ReadProduct = () => {
   return Http.get<ProductModel>("api/product/read");
 };
 
+const GetProductById = (id: number) => {
+  return Http.get<ProductModel>(`api/product/get/${id}`);
+};
+
 const AddProduct = (data: any) => {
   return Http.post<ProductModel>("/api/product/add", data)
     .then((res: any) => {
@@ -26,6 +30,11 @@ const UpdateProduct = ({ id, data }: UpdateProductModel) => {
     });
 };
 
-const ProductServices = { ReadProduct, AddProduct, UpdateProduct };
+const ProductServices = {
+  ReadProduct,
+  GetProductById,
+  AddProduct,
+  UpdateProduct,
+};
 
 export default ProductServices;

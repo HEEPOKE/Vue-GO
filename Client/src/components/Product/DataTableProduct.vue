@@ -114,9 +114,6 @@ export default {
     };
   },
   methods: {
-    number() {
-      let i = 1;
-    },
     readProduct() {
       ProductServices.ReadProduct()
         .then((res: any) => {
@@ -129,7 +126,6 @@ export default {
     },
     deleteProduct() {
       // let id = this.product.findIndex(i => i.id === id)
-      // v-for="Product in product" :key="product.id"
     },
   },
   mounted() {
