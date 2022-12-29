@@ -24,6 +24,7 @@ func Router() {
 	product := api.Group("/product")
 	product.Get("/read", productController.ReadProduct)
 	product.Post("/add", productController.AddProduct)
+	product.Put("/update/:id", productController.UpdateProduct)
 
 	r.Listen(":6476")
 }

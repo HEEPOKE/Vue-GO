@@ -19,14 +19,32 @@ func ReadProduct(c *fiber.Ctx) error {
 
 func AddProduct(c *fiber.Ctx) error {
 	product := new(models.Product)
+	if err := c.BodyParser(product); err != nil {
+		return c.Status(fiber.StatusInternalServerError).JSON(&fiber.Map{
+			"message": err.Error(),
+		})
+	}
+	database.DB.Create(&product)
+
+	return c.Status(200).JSON(&fiber.Map{
+		"status":  "Success",
+		"payload": product,
+	})
+}
+
+func UpdateProduct(c *fiber.Ctx) error {
+	product := new(models.Product)
+	id := c.Params("id")
 
 	if err := c.BodyParser(product); err != nil {
-		return c.Status(503).JSON(err.Error())
+		return c.Status(fiber.StatusInternalServerError).JSON(&fiber.Map{
+			"message": err.Error(),
+		})
 	}
 
-	database.DB.Create(&product)
-	return c.Status(201).JSON(&fiber.Map{
-		"status":  "Success",
+	database.DB.Where("id = ?", id).Updates(&product)
+	return c.Status(200).JSON(&fiber.Map{
+		"status":  "Update Success",
 		"payload": product,
 	})
 }
