@@ -19,8 +19,11 @@ func Router() {
 		MaxAge:           12,
 	}))
 
-	r.Get("/product", productController.ReadProduct)
-	r.Post("/product/add", productController.AddProduct)
+	api := r.Group("/api")
+
+	product := api.Group("/product")
+	product.Get("/read", productController.ReadProduct)
+	product.Post("/add", productController.AddProduct)
 
 	r.Listen(":6476")
 }

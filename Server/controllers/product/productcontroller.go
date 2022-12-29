@@ -9,7 +9,7 @@ import (
 
 func ReadProduct(c *fiber.Ctx) error {
 	var product []models.Product
-	database.DB.First(&product)
+	database.DB.Find(&product)
 
 	return c.Status(200).JSON(&fiber.Map{
 		"status":  "Success",
