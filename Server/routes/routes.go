@@ -22,6 +22,7 @@ func Router() {
 	api := r.Group("/api")
 
 	product := api.Group("/product")
+	product.Get("/get/:id", productController.GetProduct)
 	product.Get("/read", productController.ReadProduct)
 	product.Post("/add", productController.AddProduct)
 	product.Put("/update/:id", productController.UpdateProduct)

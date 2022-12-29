@@ -17,6 +17,22 @@ func ReadProduct(c *fiber.Ctx) error {
 	})
 }
 
+func GetProduct(c *fiber.Ctx) error {
+	id := c.Params("id")
+	var product models.Product
+
+	result := database.DB.Find(&product, id)
+
+	if result.RowsAffected == 0 {
+		return c.SendStatus(404)
+	}
+
+	return c.Status(200).JSON(&fiber.Map{
+		"status":  "Success",
+		"payload": product,
+	})
+}
+
 func AddProduct(c *fiber.Ctx) error {
 	product := new(models.Product)
 	if err := c.BodyParser(product); err != nil {
