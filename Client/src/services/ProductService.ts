@@ -2,6 +2,10 @@ import Http from "../http/http";
 import ProductModel from "../models/product";
 import UpdateProductModel from "../models/updateProductModel";
 
+const ReadProduct = () => {
+  return Http.get<ProductModel>("api/product/read");
+};
+
 const AddProduct = (data: any) => {
   return Http.post<ProductModel>("/api/product/add", data)
     .then((res: any) => {
@@ -22,6 +26,6 @@ const UpdateProduct = ({ id, data }: UpdateProductModel) => {
     });
 };
 
-const ProductServices = { AddProduct, UpdateProduct };
+const ProductServices = { ReadProduct, AddProduct, UpdateProduct };
 
 export default ProductServices;
