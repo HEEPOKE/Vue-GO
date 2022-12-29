@@ -113,11 +113,12 @@
   </div>
 </template>
 <script lang="ts">
+import { defineComponent } from "vue";
 import Http from "../../http/http";
 import ProductModel from "../../models/product";
 import ProductServices from "../../services/ProductService";
 
-export default {
+export default defineComponent({
   name: "DataTableProduct",
   data() {
     return {
@@ -142,5 +143,5 @@ export default {
   mounted() {
     this.readProduct();
   },
-};
+});
 </script>

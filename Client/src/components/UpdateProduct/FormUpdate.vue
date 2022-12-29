@@ -67,15 +67,13 @@
   </div>
 </template>
 <script lang="ts">
-import { useRoute } from "vue-router";
+import { defineComponent } from "vue";
 import Http from "../../http/http";
 import ProductServices from "../../services/ProductService";
 import ProductModel from "../../models/product";
 import UpdateProductModel from "../../models/updateProductModel";
 
-const route = useRoute();
-
-export default {
+export default defineComponent({
   name: "FormUpdateProduct",
   data() {
     return {
@@ -117,5 +115,5 @@ export default {
   mounted() {
     this.getProduct();
   },
-};
+});
 </script>
