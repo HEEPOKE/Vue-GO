@@ -44,7 +44,22 @@ func UpdateProduct(c *fiber.Ctx) error {
 
 	database.DB.Where("id = ?", id).Updates(&product)
 	return c.Status(200).JSON(&fiber.Map{
-		"status":  "Update Success",
+		"status":  "Success",
 		"payload": product,
+	})
+}
+
+func DeleteProduct(c *fiber.Ctx) error {
+	id := c.Params("id")
+	var product models.Product
+
+	result := database.DB.Delete(&product, id)
+
+	if result.RowsAffected == 0 {
+		return c.SendStatus(404)
+	}
+
+	return c.Status(200).JSON(&fiber.Map{
+		"status": "Success",
 	})
 }
