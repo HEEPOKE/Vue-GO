@@ -2,6 +2,7 @@ package routes
 
 import (
 	productController "Server/Api/controllers/product"
+	userController "Server/Api/controllers/user"
 	"os"
 
 	"github.com/gofiber/fiber/v2"
@@ -20,6 +21,13 @@ func Router() {
 	}))
 
 	api := r.Group("/api")
+
+	user := api.Group("/user")
+	user.Get("/get/:id", userController.GetUser)
+	user.Get("/read", userController.ReadUser)
+	user.Post("/add", userController.AddUser)
+	user.Put("/update/:id", userController.UpdateUser)
+	user.Delete("/delete/:id", userController.DeleteUser)
 
 	product := api.Group("/product")
 	product.Get("/get/:id", productController.GetProduct)
