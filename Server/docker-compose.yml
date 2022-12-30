@@ -3,12 +3,12 @@ services:
   postgres-db:
     image: postgres:13
     ports:
-      - 5434:5432
+      - 5432:5432
     environment:
-      POSTGRES_USER: yoyo
+      POSTGRES_USER: postgres
       POSTGRES_PASSWORD: 5555
       POSTGRES_DB: gofiber
-    networks:
-      - freecodecamp
-networks:
-  freecodecamp:
+#     networks:
+#       - freecodecamp
+# networks:
+#   freecodecamp:
