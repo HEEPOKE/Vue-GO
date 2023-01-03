@@ -12,33 +12,33 @@
                         <div class="mb-3">
                             <label class="form-label inline-block text-lg mb-2 text-gray-700 dark:text-white">Username</label>
                             <input type="text"
-                                class="form-control block w-full px-4 py-2 text-xl font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none dark:text-white"
+                                class="form-control block w-full px-4 py-2 text-xl font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none dark:text-gray-700"
                                 v-model="register.username" placeholder="Username" required />
                         </div>
                         <div class="mb-3">
-                            <label class="form-label inline-block text-lg mb-2 text-gray-700 dark:text-white">Email</label>
+                            <label class="form-label inline-block text-lg mb-2 text-gray-700 dark:text-gray-700">Email</label>
                             <input type="email"
-                                class="form-control block w-full px-4 py-2 text-xl font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none dark:text-white"
+                                class="form-control block w-full px-4 py-2 text-xl font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none dark:text-gray-700"
                                 v-model="register.email" placeholder="Email" required />
                         </div>
                         <div class="mb-3">
-                            <label class="form-label inline-block text-lg mb-2 text-gray-700 dark:text-white">Password</label>
+                            <label class="form-label inline-block text-lg mb-2 text-gray-700 dark:text-gray-700">Password</label>
                             <input type="password"
-                                class="form-control block w-full px-4 py-2 text-xl font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none dark:text-white"
+                                class="form-control block w-full px-4 py-2 text-xl font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none dark:text-gray-700"
                                 v-model="register.password" placeholder="Password" minlength="8" maxlength="20"
                                 required />
                         </div>
                         <div class="mb-3">
-                            <label class="form-label inline-block text-lg mb-2 text-gray-700 dark:text-white">Confirm Password</label>
+                            <label class="form-label inline-block text-lg mb-2 text-gray-700 dark:text-gray-700">Confirm Password</label>
                             <input type="password"
-                                class="form-control block w-full px-4 py-2 text-xl font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none dark:text-white"
+                                class="form-control block w-full px-4 py-2 text-xl font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none dark:text-gray-700"
                                 minlength="8" maxlength="20" v-model="register.confirmPassword"
                                 placeholder="Confirm Password" required />
                         </div>
                         <div class="mb-3">
                             <label class="form-label inline-block text-lg mb-2 text-gray-700 dark:text-white">Telephone</label>
                             <input type="tel"
-                                class="form-control block w-full px-4 py-2 text-xl font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none dark:text-white"
+                                class="form-control block w-full px-4 py-2 text-xl font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none dark:text-gray-700"
                                 minlength="10" maxlength="10" v-model="register.tel" placeholder="xxx-xxx-xxxx"
                                 required />
                         </div>
