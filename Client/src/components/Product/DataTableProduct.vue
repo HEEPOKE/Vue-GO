@@ -94,7 +94,7 @@
                       </button>
                     </routerLink>
                     <button
-                      type="button"
+                      @click.prevent="deleteProduct(product.ID, product.name)"
                       class="inline-block mx-1 px-4 text-center py-2.5 bg-red-600 text-white font-medium text-xs leading-tight rounded shadow-md hover:bg-red-700 hover:shadow-lg focus:bg-red-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-red-800 active:shadow-lg transition duration-150 ease-in-out"
                     >
                       <font-awesome-icon
@@ -116,6 +116,7 @@
 import { defineComponent } from "vue";
 import ProductModel from "../../models/product";
 import ProductServices from "../../services/ProductService";
+import SwalProduct from "../../services/swalProduct/";
 
 export default defineComponent({
   name: "DataTableProduct",
@@ -134,8 +135,8 @@ export default defineComponent({
           console.log(err);
         });
     },
-    deleteProduct() {
-      // let id = this.product.findIndex(i => i.id === id)
+    deleteProduct(id: any, name: string) {
+      SwalProduct.DeleteSwal(id, name);
     },
   },
   mounted() {
