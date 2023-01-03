@@ -22,11 +22,9 @@ func GetProduct(c *fiber.Ctx) error {
 	var product models.Product
 
 	result := database.DB.Find(&product, id)
-
 	if result.RowsAffected == 0 {
 		return c.SendStatus(404)
 	}
-
 	return c.Status(200).JSON(&fiber.Map{
 		"status":  "Success",
 		"payload": product,
@@ -41,7 +39,6 @@ func AddProduct(c *fiber.Ctx) error {
 		})
 	}
 	database.DB.Create(&product)
-
 	return c.Status(200).JSON(&fiber.Map{
 		"status":  "Success",
 		"payload": product,
@@ -70,11 +67,9 @@ func DeleteProduct(c *fiber.Ctx) error {
 	var product models.Product
 
 	result := database.DB.Delete(&product, id)
-
 	if result.RowsAffected == 0 {
 		return c.SendStatus(404)
 	}
-
 	return c.Status(200).JSON(&fiber.Map{
 		"status": "Success",
 	})
