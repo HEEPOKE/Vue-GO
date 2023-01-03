@@ -114,7 +114,6 @@
 </template>
 <script lang="ts">
 import { defineComponent } from "vue";
-import Http from "../../http/http";
 import ProductModel from "../../models/product";
 import ProductServices from "../../services/ProductService";
 
@@ -130,7 +129,6 @@ export default defineComponent({
       ProductServices.ReadProduct()
         .then((res: any) => {
           this.products = res.data.payload;
-          console.log(res.data.payload);
         })
         .catch((err: any) => {
           console.log(err);
