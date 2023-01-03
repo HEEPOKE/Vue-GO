@@ -83,7 +83,7 @@ func Login(c *fiber.Ctx) error {
 		})
 		tokenString, err := token.SignedString(hmacSampleSecret)
 		fmt.Println(tokenString, err)
-		return c.Status(http.StatusBadRequest).JSON(&fiber.Map{
+		return c.Status(http.StatusOK).JSON(&fiber.Map{
 			"status":  "ok",
 			"message": "Login Success",
 			"token":   tokenString,

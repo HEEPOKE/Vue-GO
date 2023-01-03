@@ -25,6 +25,7 @@ func Router() {
 
 	auth := api.Group("/auth")
 	auth.Post("/register", authController.Register)
+	auth.Post("/login", authController.Login)
 
 	user := api.Group("/user")
 	user.Get("/get/:id", userController.GetUser)
