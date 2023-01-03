@@ -10,22 +10,17 @@
         <input
           type="text"
           class="block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:border-rose-600 focus:outline-none"
-          readonly
         />
       </div>
       <div class="form-group mb-6">
-        <label
-          class="form-label inline-block mb-2 text-gray-700"
-          >Name</label
-        >
+        <label class="form-label inline-block mb-2 text-gray-700">Name</label>
         <input
           type="text"
           class="block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:border-rose-600 focus:outline-none"
         />
       </div>
       <div class="form-group mb-6">
-        <label
-          class="form-label inline-block mb-2 text-gray-700"
+        <label class="form-label inline-block mb-2 text-gray-700"
           >Description</label
         >
         <textarea
@@ -35,10 +30,7 @@
         </textarea>
       </div>
       <div class="form-group mb-6">
-        <label
-          class="form-label inline-block mb-2 text-gray-700"
-          >Price</label
-        >
+        <label class="form-label inline-block mb-2 text-gray-700">Price</label>
         <input
           type="number"
           class="block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:border-rose-600 focus:outline-none"
@@ -68,7 +60,6 @@ import { defineComponent } from "vue";
 import Http from "../../http/http";
 import ProductServices from "../../services/ProductService";
 import ProductModel from "../../models/product";
-import UpdateProductModel from "../../models/updateProductModel";
 
 export default defineComponent({
   name: "FormUpdateProduct",
@@ -95,7 +86,7 @@ export default defineComponent({
         this.goBack();
       }
     },
-    updateProduct({ id, data }: UpdateProductModel) {
+    updateProduct(id: number, data: any) {
       Http.put<ProductModel>(`/api/product/update${id}`, data)
         .then((res: any) => {
           console.log(res);
