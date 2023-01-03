@@ -4,4 +4,5 @@ export default interface RegisterModel {
   password: string;
   confirmPassword: string;
   tel: string;
+  role: number;
 }
