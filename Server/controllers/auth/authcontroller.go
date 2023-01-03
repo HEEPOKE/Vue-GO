@@ -9,6 +9,10 @@ import (
 	"golang.org/x/crypto/bcrypt"
 )
 
+const SecretKey = "secret"
+
+var hmacSampleSecret []byte
+
 func Register(c *fiber.Ctx) error {
 	json := new(models.User)
 	if err := c.BodyParser(json); err != nil {
@@ -48,5 +52,5 @@ func Register(c *fiber.Ctx) error {
 			"message": "fail",
 		})
 	}
-	return c.Status(http.StatusOK).JSON("")
+	return c.SendStatus(http.StatusOK)
 }

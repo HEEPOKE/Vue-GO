@@ -86,6 +86,7 @@ export default defineComponent({
                 password: "",
                 confirmPassword: "",
                 tel: "",
+                role: 1,
             } as RegisterModel,
         }
     },
@@ -101,6 +102,7 @@ export default defineComponent({
                 email: this.register.email,
                 password: password,
                 tel: this.register.tel,
+                role: 1,
             }
 
             if (password != confirmPassword) {
