@@ -8,25 +8,23 @@
           >Code</label
         >
         <input
-          type="email"
+          type="text"
           class="block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:border-rose-600 focus:outline-none"
           readonly
         />
       </div>
       <div class="form-group mb-6">
         <label
-          for="exampleInputEmail1"
           class="form-label inline-block mb-2 text-gray-700"
           >Name</label
         >
         <input
-          type="email"
+          type="text"
           class="block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:border-rose-600 focus:outline-none"
         />
       </div>
       <div class="form-group mb-6">
         <label
-          for="exampleInputPassword1"
           class="form-label inline-block mb-2 text-gray-700"
           >Description</label
         >
@@ -38,7 +36,6 @@
       </div>
       <div class="form-group mb-6">
         <label
-          for="exampleInputPassword1"
           class="form-label inline-block mb-2 text-gray-700"
           >Price</label
         >
