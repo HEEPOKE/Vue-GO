@@ -14,12 +14,17 @@ func ValidationMiddleware(next fiber.Handler) fiber.Handler {
 		hmacSampleSecret := []byte(os.Getenv("JWT_SECRET_KEY"))
 		authHeader := c.Get("Authorization")
 		if authHeader == "" {
-			return c.Status(fiber.StatusUnauthorized).SendString("Missing authorization header")
+			return c.Status(fiber.StatusUnauthorized).JSON(&fiber.Map{
+				"status":  "forbidden",
+				"message": "Missing authorization header",
+			})
 		}
-
 		parts := strings.Split(authHeader, " ")
 		if len(parts) != 2 || parts[0] != "Bearer" {
-			return c.Status(fiber.StatusUnauthorized).SendString("Invalid authorization header")
+			return c.Status(fiber.StatusUnauthorized).JSON(&fiber.Map{
+				"status":  "forbidden",
+				"message": "Invalid authorization header",
+			})
 		}
 		tokenString := parts[1]
 
@@ -37,6 +42,6 @@ func ValidationMiddleware(next fiber.Handler) fiber.Handler {
 				"message": err.Error(),
 			})
 		}
-		return next(c)
+		return c.Next()
 	}
 }
