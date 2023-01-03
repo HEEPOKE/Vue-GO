@@ -3,9 +3,13 @@ package auth
 import (
 	"Server/Api/database"
 	"Server/Api/models"
+	"fmt"
 	"net/http"
+	"os"
+	"time"
 
 	"github.com/gofiber/fiber/v2"
+	"github.com/golang-jwt/jwt/v4"
 	"golang.org/x/crypto/bcrypt"
 )
 
@@ -41,16 +45,55 @@ func Register(c *fiber.Ctx) error {
 
 	database.DB.Create(&user)
 	if user.ID > 0 {
-		c.Status(http.StatusOK).JSON(&fiber.Map{
+		return c.Status(http.StatusOK).JSON(&fiber.Map{
 			"status":  "ok",
 			"message": "success",
 			"userId":  user.ID,
 		})
 	} else {
-		c.Status(http.StatusBadRequest).JSON(&fiber.Map{
+		return c.Status(http.StatusBadRequest).JSON(&fiber.Map{
 			"status":  "error",
 			"message": "fail",
 		})
 	}
-	return c.SendStatus(http.StatusOK)
+}
+
+func Login(c *fiber.Ctx) error {
+	json := new(models.User)
+	if err := c.BodyParser(json); err != nil {
+		return err
+	}
+	if json.Email == "" || json.Password == "" {
+		return fiber.NewError(fiber.StatusBadRequest, "กรุณากรอกข้อมูลให้ครบ")
+	}
+	var userExist models.User
+	database.DB.Where("email = ?", json.Email).First(&userExist)
+	if userExist.ID == 0 {
+		return c.Status(http.StatusBadRequest).JSON(&fiber.Map{
+			"status":  "Error",
+			"message": "user Does Not Exist",
+		})
+	}
+	err := bcrypt.CompareHashAndPassword([]byte(userExist.Password), []byte(json.Password))
+	if err == nil {
+		hmacSampleSecret = []byte(os.Getenv("JWT_SECRET_KEY"))
+		token := jwt.NewWithClaims(jwt.SigningMethodHS256, jwt.MapClaims{
+			"userId": userExist.ID,
+			"exp":    time.Now().Add(time.Minute * 1).Unix(),
+		})
+		tokenString, err := token.SignedString(hmacSampleSecret)
+		fmt.Println(tokenString, err)
+		return c.Status(http.StatusBadRequest).JSON(&fiber.Map{
+			"status":  "ok",
+			"message": "Login Success",
+			"token":   tokenString,
+		})
+
+	} else {
+		return c.Status(http.StatusBadRequest).JSON(&fiber.Map{
+			"status":  "error",
+			"message": "Login Failed",
+		})
+
+	}
 }
