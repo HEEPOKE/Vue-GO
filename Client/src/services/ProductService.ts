@@ -1,12 +1,11 @@
 import Http from "../http/http";
-import ProductModel from "../models/product";
 
 const ReadProduct = () => {
-  return Http.get<ProductModel>("api/product/read");
+  return Http.get("api/product/read");
 };
 
 const GetProductById = (id: number) => {
-  return Http.get<ProductModel>(`api/product/get/${id}`);
+  return Http.get(`api/product/get/${id}`);
 };
 
 const AddProduct = (data: any) => {
@@ -20,7 +19,7 @@ const AddProduct = (data: any) => {
 };
 
 const UpdateProduct = (id: number, data: any) => {
-  return Http.put<ProductModel>(`/api/product/update/${id}`, data);
+  return Http.put(`/api/product/update/${id}`, data);
 };
 
 const ProductServices = {
