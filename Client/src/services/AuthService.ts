@@ -13,6 +13,7 @@ const RegisterService = (data: any) => {
 const LoginService = (data: any) => {
   return Http.post("api/auth/login", data)
     .then((res: any) => {
+      window.location.href = "./";
       console.log(res);
     })
     .catch((err: any) => {
