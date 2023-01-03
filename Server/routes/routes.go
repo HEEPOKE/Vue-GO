@@ -1,6 +1,7 @@
 package routes
 
 import (
+	authController "Server/Api/controllers/auth"
 	productController "Server/Api/controllers/product"
 	userController "Server/Api/controllers/user"
 	"os"
@@ -21,6 +22,9 @@ func Router() {
 	}))
 
 	api := r.Group("/api")
+
+	auth := api.Group("/auth")
+	auth.Post("/register", authController.Register)
 
 	user := api.Group("/user")
 	user.Get("/get/:id", userController.GetUser)
