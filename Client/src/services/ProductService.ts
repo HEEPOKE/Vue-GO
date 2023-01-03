@@ -12,7 +12,7 @@ const GetProductById = (id: number) => {
 const AddProduct = (data: any) => {
   return Http.post("/api/product/add", data)
     .then((res: any) => {
-      console.log(res);
+      window.location.reload();
     })
     .catch((err: any) => {
       console.log(err);
